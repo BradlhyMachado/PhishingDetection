@@ -1,0 +1,42 @@
+# Node.js
+node_modules/
+npm-debug.log
+package-lock.json
+yarn-error.log
+dist/
+build/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+*.egg-info/
+*.egg
+.Python
+db.sqlite3
+*.db
+
+# Flask specific
+instance/
+.webassets-cache
+
+# Pytest
+.cache
+*.cover
+coverage.xml
+*.coveragerc
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Operating System files
+.DS_Store
+Thumbs.db

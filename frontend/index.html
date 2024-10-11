@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de URLs de Phishing</title>
+</head>
+<body>
+    <h1>Prueba de Detección de URLs</h1>
+
+    <form id="url-form">
+        <label for="url-input">Ingresa una URL para analizar:</label>
+        <input type="text" id="url-input" placeholder="https://ejemplo.com" required>
+        <button type="submit">Analizar URL</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        const form = document.getElementById('url-form');
+        const input = document.getElementById('url-input');
+        const resultadoDiv = document.getElementById('resultado');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Evita el comportamiento por defecto del formulario
+            const url = input.value;
+
+            if (url) {
+                window.electronAPI.analizarURL(url);
+                resultadoDiv.innerText = `Analizando: ${url}`;
+            }
+        });
+    </script>
+</body>
+</html>
