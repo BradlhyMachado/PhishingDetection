@@ -29,7 +29,7 @@ function enviarURLParaAnalisis(url) {
         console.log(`Respuesta del servidor:`, data.sospechosa);
 
         if (data.sospechosa) {
-            mostrarNotificacion(url);
+            mostrarAlerta(url);
         } else {
             mainWindow.webContents.send('resultado', `La URL ${url} es segura.`);
         }
@@ -40,8 +40,19 @@ function enviarURLParaAnalisis(url) {
     });
 }
 
-function mostrarNotificacion(url) {
-    new Notification({ title: 'Alerta de Phishing', body: `URL sospechosa detectada: ${url}` }).show();
+function mostrarAlerta(url) {
+    const alertWindow = new BrowserWindow({
+        width: 600,
+        height: 400,
+        webPreferences: {
+            nodeIntegration: false,
+            contextIsolation: true,
+            preload: path.join(__dirname, 'preload.js')
+        },
+    });
+
+    // Cargar el archivo HTML de la alerta
+    alertWindow.loadFile(path.join(__dirname, 'alerta.html'));
 }
 
 app.whenReady().then(() => {

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta de Phishing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .alert-box {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .alert-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .alert-icon {
+            font-size: 50px;
+            margin-right: 15px;
+        }
+        .alert-title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .alert-text {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #555;
+        }
+        .alert-description {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #777;
+        }
+        .close-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert-box">
+        <div class="alert-header">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-title">Alerta !!!</div>
+        </div>
+        <div class="alert-text">
+            Usted ha hecho click en una potencial URL clasificada como ataque “Phishing”.
+        </div>
+        <div class="alert-description">
+            Cierre la página web que se abrió por la URL y no ingrese ningún dato personal en ella.
+        </div>
+        <button class="close-btn" onclick="window.close()">Cerrar</button>
+    </div>
+</body>
+</html>
